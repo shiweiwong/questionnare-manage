@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <Button type="primary">测试</Button>
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
