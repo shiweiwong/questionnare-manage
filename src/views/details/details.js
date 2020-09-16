@@ -36,6 +36,7 @@ export default{
           this.answers = res.data.data.data
           this.faceSrc = this.$api.getImages + this.userId+ "faceSrc.jpg"
           this.tongueSrc = this.$api.getImages + this.userId +"tongueSrc.jpg"
+          this.tongueBackSrc = this.$api.getImages + this.userId +"tongueBackSrc.jpg"
         }
       }
     )

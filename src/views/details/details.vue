@@ -25,12 +25,18 @@
 
       <!-- 照片部分 -->
       <div v-viewer id="pic-wrap">
-        <div style="width:50%">
+
+        <div style="width:32%">
           <div class="pic-item">
             <img :src="tongueSrc"/>
           </div>
         </div>
-        <div style="width:50%">
+        <div style="width:32%">
+          <div class="pic-item">
+            <img :src="tongueBackSrc"/>
+          </div>
+        </div>
+        <div style="width:32%">
           <div class="pic-item">
             <img :src="faceSrc"/>
           </div>

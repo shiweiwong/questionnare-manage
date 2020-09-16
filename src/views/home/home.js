@@ -42,7 +42,7 @@ export default{
           key: "score"
         },
         {
-          title: "舌苔图像",
+          title: "舌头正面图像",
           key: "tongue",
           align: "center",
           render: (h, params) =>{
@@ -56,6 +56,26 @@ export default{
                 },
                 attrs: {
                   src: params.row.tongue
+                }
+              }
+            )
+          }
+        },
+        {
+          title: "舌头背面图像",
+          key: "tongue",
+          align: "center",
+          render: (h, params) =>{
+            return h(
+              "img",
+              {
+                style: {
+                  width: "100px",
+                  height: "80px",
+                  "border-radius": "5%"
+                },
+                attrs: {
+                  src: params.row.tongueBack
                 }
               }
             )
@@ -123,7 +143,8 @@ export default{
         {"title":"医院","key":"hospital","type":"text"},
         {"title":"访视次数(次)","key":"visits","type":"text"},
         {"title":"得分(分)","key":"score","type":"text"},
-        {"title":"舌苔图像","key":"tongue","type":"image","width":80,"height":50},
+        {"title":"舌头正面图像","key":"tongue","type":"image","width":80,"height":50},
+        {"title":"舌头背面图像","key":"tongueBack","type":"image","width":80,"height":50},
         {"title":"脸部图像","key":"face","type":"image","width":80,"height":50}
       ]
       const data = JSON.parse(JSON.stringify(this.infos))
@@ -139,9 +160,11 @@ export default{
           item["sex"] = item["sex"] === "male" ? "男" : "女"
           item["tongue"] = this.$api.getImages + item.userId + "tongueSrc.jpg"
           item["face"] = this.$api.getImages + item.userId + "faceSrc.jpg"
+          item["tongueBack"] =  this.$api.getImages + item.userId + "tongueBackSrc.jpg"
         });
 
       }
     })
   }
+
 }
